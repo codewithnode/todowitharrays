@@ -1,0 +1,15 @@
+<%- include("./_partials/header") %>
+<div class="container">    
+  <form action="addtodo" method="POST">
+      <div class="input-group mb-3 mt-5">
+        <input type="text" class="form-control" placeholder="Add A TODO" aria-label="Todo" aria-describedby="button-addon2" name='todoitem'>
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Add</button>
+      </div>
+      <ul class="list-group list-group-flush">
+          <% for(i=0; i<todoarr.length ; i++) {%> 
+          <li class="list-group-item"> <%= todoarr[i] %> <a href="/delete/<%= i %>" class="btn btn-outline-danger">Delete</a></li>
+          <% } %>
+      </ul>
+
+  </div>
+ <%- include("./_partials/footer") %>
